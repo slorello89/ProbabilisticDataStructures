@@ -1,0 +1,25 @@
+{
+  "version": 2,
+  "dgSpecHash": "KS23IfAdymlJVi3u156x0PslTyTUzot9+yoxL5ubOjHd2thRC8EtZIa05WuKoZPqhgg2pzXmYR3519cWtc02Og==",
+  "success": true,
+  "projectFilePath": "/Users/stephenlorello/projects/redis/ProbabilisticDataStructures/ProbabilisticDataStructures.csproj",
+  "expectedPackageFiles": [
+    "/Users/stephenlorello/.nuget/packages/microsoft.netcore.platforms/5.0.0/microsoft.netcore.platforms.5.0.0.nupkg.sha512",
+    "/Users/stephenlorello/.nuget/packages/microsoft.win32.registry/5.0.0/microsoft.win32.registry.5.0.0.nupkg.sha512",
+    "/Users/stephenlorello/.nuget/packages/microsoft.win32.systemevents/5.0.0/microsoft.win32.systemevents.5.0.0.nupkg.sha512",
+    "/Users/stephenlorello/.nuget/packages/npgsql/6.0.7/npgsql.6.0.7.nupkg.sha512",
+    "/Users/stephenlorello/.nuget/packages/pipelines.sockets.unofficial/2.2.2/pipelines.sockets.unofficial.2.2.2.nupkg.sha512",
+    "/Users/stephenlorello/.nuget/packages/stackexchange.redis/2.6.66/stackexchange.redis.2.6.66.nupkg.sha512",
+    "/Users/stephenlorello/.nuget/packages/system.configuration.configurationmanager/5.0.0/system.configuration.configurationmanager.5.0.0.nupkg.sha512",
+    "/Users/stephenlorello/.nuget/packages/system.diagnostics.performancecounter/5.0.0/system.diagnostics.performancecounter.5.0.0.nupkg.sha512",
+    "/Users/stephenlorello/.nuget/packages/system.drawing.common/5.0.0/system.drawing.common.5.0.0.nupkg.sha512",
+    "/Users/stephenlorello/.nuget/packages/system.io.pipelines/5.0.1/system.io.pipelines.5.0.1.nupkg.sha512",
+    "/Users/stephenlorello/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "/Users/stephenlorello/.nuget/packages/system.security.accesscontrol/5.0.0/system.security.accesscontrol.5.0.0.nupkg.sha512",
+    "/Users/stephenlorello/.nuget/packages/system.security.cryptography.protecteddata/5.0.0/system.security.cryptography.protecteddata.5.0.0.nupkg.sha512",
+    "/Users/stephenlorello/.nuget/packages/system.security.permissions/5.0.0/system.security.permissions.5.0.0.nupkg.sha512",
+    "/Users/stephenlorello/.nuget/packages/system.security.principal.windows/5.0.0/system.security.principal.windows.5.0.0.nupkg.sha512",
+    "/Users/stephenlorello/.nuget/packages/system.windows.extensions/5.0.0/system.windows.extensions.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
