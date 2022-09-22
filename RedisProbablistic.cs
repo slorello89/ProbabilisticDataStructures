@@ -44,7 +44,7 @@ public class RedisProbabilistic : IMethod
         tasks.Add(Db.ExecuteAsync("CMS.INCRBY", cmsList.ToArray()));
         tasks.Add(Db.ExecuteAsync("BF.RESERVE", _bfName, 0.01, 40000));
         tasks.Add(Db.ExecuteAsync("BF.MADD", bloomList.ToArray()));
-        tasks.Add(Db.ExecuteAsync("TOPK.RESERVE", _topKName, 10));
+        tasks.Add(Db.ExecuteAsync("TOPK.RESERVE", _topKName, 10, 20, 10, .925));
         tasks.Add(Db.ExecuteAsync("TOPK.ADD", topKList.ToArray()));
         tasks.Add(Db.HyperLogLogAddAsync(_hllName, arr));
         await Task.WhenAll(tasks);

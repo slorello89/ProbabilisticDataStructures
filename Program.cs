@@ -18,7 +18,7 @@ await using (var dropCommand = new NpgsqlCommand("DROP SCHEMA public CASCADE; CR
 {
     await dropCommand.ExecuteNonQueryAsync();
 }
-char[] delimiterChars = { ' ', ',', '.', ':', '\t', '\n', '—', '?', '"', ';', '!', '’', '\r', '\'', '(', ')' };
+char[] delimiterChars = { ' ', ',', '.', ':', '\t', '\n', '—', '?', '"', ';', '!', '’', '\r', '\'', '(', ')', '”' };
 
 var text = await File.ReadAllTextAsync("data/moby-dick.txt");
 var words = text.Split(delimiterChars).Where(s=>!string.IsNullOrWhiteSpace(s)).Select(s=>s.ToLower()).ToArray();
