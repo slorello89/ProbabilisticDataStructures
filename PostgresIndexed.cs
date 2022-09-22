@@ -62,7 +62,7 @@ public class PostgresIndexed : IMethod
 
     public async Task<long> CardinalityCheck()
     {
-        await using (var cmd = new NpgsqlCommand($"SELECT count(*) FROM {tableName}", _conn))
+        await using (var cmd = new NpgsqlCommand($"SELECT COUNT(DISTINCT word) FROM {tableName}", _conn))
         {
             var res = await cmd.ExecuteScalarAsync();
             return (long) res;
