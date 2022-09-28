@@ -5,6 +5,7 @@ namespace ProbabilisticDataStructures;
 
 public class PostgresUnindexed : IMethod
 {
+    public string Name => "Postgres Unindexed";
     private const string tableName = "wordsunindexed";
     private readonly NpgsqlConnection _conn;
 

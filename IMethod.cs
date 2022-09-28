@@ -13,4 +13,6 @@ public interface IMethod
     Task<string[]> TopKCheck(long top);
 
     Task GetSize(IDictionary<string, long> dictionary);
+    
+    string Name { get; }
 }

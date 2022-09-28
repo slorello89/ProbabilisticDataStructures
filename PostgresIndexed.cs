@@ -5,6 +5,7 @@ namespace ProbabilisticDataStructures;
 
 public class PostgresIndexed : IMethod
 {
+    public string Name => "Postgres Indexed";
     private const string tableName = "wordsindexed";
     private readonly NpgsqlConnection _conn;
 
