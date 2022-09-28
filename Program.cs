@@ -50,7 +50,7 @@ async Task<long> MeasureQueryPresence(IMethod method, string word)
 {
     var watch = Stopwatch.StartNew();
     var res = await method.PresenceCheck(word) ? "was" : "was not";
-    Console.WriteLine($"Method: {method.Name} determined that {word} {res} present");
+    Console.WriteLine($"Method: {method.Name} determined that '{word}' {res} present");
     watch.Stop();
     return watch.ElapsedMilliseconds;
 }
@@ -59,7 +59,7 @@ async Task<long> MeasureQueryCount(IMethod method, string word)
 {
     var watch = Stopwatch.StartNew();
     var res = await method.ItemCount(word);
-    Console.WriteLine($"{method.Name} counted {res} occurrences of {word}");
+    Console.WriteLine($"Method: {method.Name} counted {res} occurrences of '{word}'");
     watch.Stop();
     return watch.ElapsedMilliseconds;
 }
@@ -68,7 +68,7 @@ async Task<long> MeasureCardinality(IMethod method)
 {
     var watch = Stopwatch.StartNew();
     var res = await method.CardinalityCheck();
-    Console.WriteLine($"{method.Name} counted a total cardinality of {res}");
+    Console.WriteLine($"Method: {method.Name} counted a total cardinality of {res}");
     watch.Stop();
     return watch.ElapsedMilliseconds;
 }
@@ -101,12 +101,14 @@ Console.WriteLine($"redis probabilistic: \t{redisProbabilisticTime}");
 
 // check Presence in each of the data stores
 Console.WriteLine("==========Presence Check==========");
+Console.WriteLine("==========Results===========");
 var word = "the";
 postgresUnindexedTime = await MeasureQueryPresence(postgresUnindexed, word);
 postgresIndexedTime = await MeasureQueryPresence(postgresIndexed, word);
 redisBruteForceTime = await MeasureQueryPresence(redisBruteForce, word);
 redisProbabilisticTime = await MeasureQueryPresence(redisProbabilistic, word);
 
+Console.WriteLine("=========Times=============");
 Console.WriteLine($"pg unindexed:        \t{postgresUnindexedTime}");
 Console.WriteLine($"pg indexed:          \t{postgresIndexedTime}");
 Console.WriteLine($"redis brute force:   \t{redisBruteForceTime}");
@@ -114,12 +116,13 @@ Console.WriteLine($"redis probabilistic: \t{redisProbabilisticTime}");
 
 // Check word occurrences in each of the data stores
 Console.WriteLine("==========Item Count==========");
-
+Console.WriteLine("==========Results=========");
 postgresUnindexedTime = await MeasureQueryCount(postgresUnindexed, word);
 postgresIndexedTime = await MeasureQueryCount(postgresIndexed, word);
 redisBruteForceTime = await MeasureQueryCount(redisBruteForce, word);
 redisProbabilisticTime = await MeasureQueryCount(redisProbabilistic, word);
 
+Console.WriteLine("==========Times==========");
 Console.WriteLine($"pg unindexed:        \t{postgresUnindexedTime}");
 Console.WriteLine($"pg indexed:          \t{postgresIndexedTime}");
 Console.WriteLine($"redis brute force:   \t{redisBruteForceTime}");
@@ -127,12 +130,14 @@ Console.WriteLine($"redis probabilistic: \t{redisProbabilisticTime}");
 
 // check cardinality of each of the data stores
 Console.WriteLine("==========Cardinality==========");
+Console.WriteLine("==========Results=========");
 
 postgresUnindexedTime = await MeasureCardinality(postgresUnindexed);
 postgresIndexedTime = await MeasureCardinality(postgresIndexed);
 redisBruteForceTime = await MeasureCardinality(redisBruteForce);
 redisProbabilisticTime = await MeasureCardinality(redisProbabilistic);
 
+Console.WriteLine("==========Times==========");
 Console.WriteLine($"pg unindexed:        \t{postgresUnindexedTime}");
 Console.WriteLine($"pg indexed:          \t{postgresIndexedTime}");
 Console.WriteLine($"redis brute force:   \t{redisBruteForceTime}");
@@ -140,12 +145,14 @@ Console.WriteLine($"redis probabilistic: \t{redisProbabilisticTime}");
 
 // determine topK in each data store
 Console.WriteLine("==========Top K==========");
+Console.WriteLine("==========Results=========");
 
 postgresUnindexedTime = await MeasureTop(postgresUnindexed);
 postgresIndexedTime = await MeasureTop(postgresIndexed);
 redisBruteForceTime = await MeasureTop(redisBruteForce);
 redisProbabilisticTime = await MeasureTop(redisProbabilistic);
 
+Console.WriteLine("==========Times==========");
 Console.WriteLine($"pg unindexed:        \t{postgresUnindexedTime}");
 Console.WriteLine($"pg indexed:          \t{postgresIndexedTime}");
 Console.WriteLine($"redis brute force:   \t{redisBruteForceTime}");
