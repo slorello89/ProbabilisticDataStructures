@@ -112,7 +112,7 @@ public class RedisProbabilistic : IMethod
     /// <remarks>https://redis.io/commands/topk.list</remarks>
     public async Task<string[]> TopKCheck(long top)
     {
-        return ((RedisResult[]) await Db.ExecuteAsync("TOPK.LIST", _topKName)).Select(s=>(string)s).ToArray();
+        return ((RedisResult[]) await Db.ExecuteAsync("TOPK.LIST", _topKName))!.Select(s=>(string)s!).ToArray();
     }
 
     /// <summary>

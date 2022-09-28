@@ -69,7 +69,7 @@ public class RedisBruteForce : IMethod
     /// <remarks>https://redis.io/commands/zrange</remarks>
     public async Task<string[]> TopKCheck(long top)
     {
-        return (await Db.SortedSetRangeByRankAsync(_sortedSetName, 0, top, Order.Descending)).Select(s=>(string)s).ToArray();
+        return (await Db.SortedSetRangeByRankAsync(_sortedSetName, 0, top-1, Order.Descending)).Select(s=>(string)s!).ToArray();
     }
 
     /// <summary>
