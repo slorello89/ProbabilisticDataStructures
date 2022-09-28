@@ -21,24 +21,7 @@ In this example, we break down the individual words in Herman Melville's Epic - 
 
 ## Start Docker
 
-Use the following commands to start Redis and Postgres
-
-### Redis
-
-```bash
-docker run -d -p 6379:6379 -p 8001:8001 redis/redis-stack
-```
-
-### Postgres
-
-```bash
- docker run -d \
-	-e POSTGRES_PASSWORD=secretpassword \
-	-e PGDATA=/var/lib/postgresql/data/pgdata \
-	-v ~/mount/postgres:/var/lib/postgresql/data \
-    -p 5432:5432 \
-	postgres
-```
+Start up docker with `docker-compose up`
 
 
 ## Run the app
